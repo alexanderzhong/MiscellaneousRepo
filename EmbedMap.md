@@ -68,7 +68,7 @@ Example implementation with correct server configuration
 </body>
 </html>
 ```
-![](EMDemo.png)
+![Correct EmbedMap Implementation](EMDemo.PNG)
 
 Example implementation with incorrect server configuration
 ```html
@@ -89,4 +89,4 @@ Example implementation with incorrect server configuration
 </body>
 </html>
 ```
-![](EmbedMapFail.png)
+![Incorrect EmbedMap Implementation](EmbedMapFail.PNG)
