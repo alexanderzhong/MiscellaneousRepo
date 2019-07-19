@@ -47,8 +47,8 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 ```html
 <iframe src="https://192.168.29.10/embedMap.html?id=2ed114a0-3ccd-e0ba-0490-a7f884ec7454&t=a39cf019-9663-1437-5d12-746cb85e5ea0&d=dd15375c-692b-4d21-85e2-c4621a62be53&maptype=1" height="600px" width="1125px"></iframe>
 ```
-  
-  
+
+
 Example implementation with correct server configuration
 ```html
 <!doctype html>
@@ -90,3 +90,4 @@ Example implementation with incorrect server configuration
 </html>
 ```
 ![Incorrect EmbedMap Implementation](EmbedMapFail.PNG)
+Note: The reason why www.google.com is not loading is because Google has its X-Frame-Options (predecessor to Content-Security-Policy) set to SAMEORIGIN, which prevents the browser from displaying iFrames that are not hosted on the same domain as the parent page.
