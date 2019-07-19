@@ -49,7 +49,6 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 ```
 <br>
 <br>
-<br>
 
 *Example implementation with correct server configuration*
 ```html
@@ -71,6 +70,7 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 </html>
 ```
 ![Correct EmbedMap Implementation](EMDemo.PNG)
+<br>
 <br>
 
 *Example implementation with incorrect server configuration*
