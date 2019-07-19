@@ -1,9 +1,9 @@
 
 # EmbedMap Implementation in External Domain
-EmbedMap is a limited form of a regular NetBrain Map that we are using to integrate into third party software. During current use case, we are going to embed NetBrain map into external webpages/domains by generating an embedMap URL and set it as the source URL of an iFrame. 
+NetBrain EmbedMap is a limited view of a regular NetBrain Map that we are using to integrate into third party software. EmbedMap only shows the map itself along with the detailed information within the visualization and the data View. There are several important use cases for EmbedMap. One use case is for low level IT staff who have little experience; EmbedMap allows for them to see the map without being overwhelmed by all the information a regular map provides. In addition, EmbedMap should be implemented so that the low experience engineers can see the map without needing credentials for their NetBrain account. Another important use case is for Just-In-Time information. We can have gather information right at the time of a network incident and display a map using EmbedMap. During the current use case, we are going to embed NetBrain map into external webpages/domains by generating an embedMap URL and set it as the source URL of an iFrame. 
 
 **iFrame information**
-iFrames are HTML tags that Embeds another HTML page into the current one. Browsers keep the context of the iframe and its parent document totally separate by default. Neither the parent document nor the iframe document has access to each other's DOM, CSS styles, or JavaScript functions if they're not from the same domain. Each embedded browsing context has its own session history and document.Neither the iframe nor its parent can access the other's cookies or local storage.
+iFrames are HTML tags that embeds another HTML page into the current one. Browsers keep the context of the iframe and its parent document totally separate by default. Neither the parent document nor the iframe document has access to each other's DOM, CSS styles, or JavaScript functions if they're not from the same domain. Each embedded browsing context has its own session history and document. Neither the iframe nor its parent can access the other's cookies or local storage. Given that iFrames are html tags, we can only implement iFrames in third-party software if they allow us to add html to their domain/website. Also, since we must generate an EmbedMap URL dynamically and use RESTful API calls to retrieve NetBrain information, the third party software must also allow the mentioned functionalities.
 
 **[Step 1: Use case preparation](Step-1:-Use-case-preparation)**
 >> 1a. Enable https on Netbrain client server<br>
@@ -50,7 +50,7 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 <br>
 <br>
 
-*Example implementation with correct server configuration*
+Example implementation with correct server configuration
 ```html
 <!doctype html>
 
@@ -71,9 +71,7 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 ```
 ![Correct EmbedMap Implementation](EMDemo.PNG)
 <br>
-<br>
-
-*Example implementation with incorrect server configuration*
+Example implementation with incorrect server configuration
 ```html
 <!doctype html>
 
@@ -93,4 +91,5 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 </html>
 ```
 ![Incorrect EmbedMap Implementation](EmbedMapFail.PNG)
+<br>
 Note: The reason why www.google.com is not loading is because Google has its X-Frame-Options (predecessor to Content-Security-Policy) set to SAMEORIGIN, which prevents the browser from displaying iFrames that are not hosted on the same domain as the parent page.
