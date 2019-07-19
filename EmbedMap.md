@@ -47,8 +47,8 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 ```html
 <iframe src="https://192.168.29.10/embedMap.html?id=2ed114a0-3ccd-e0ba-0490-a7f884ec7454&t=a39cf019-9663-1437-5d12-746cb85e5ea0&d=dd15375c-692b-4d21-85e2-c4621a62be53&maptype=1" height="600px" width="1125px"></iframe>
 ```
-
-
+  
+  
 Example implementation with correct server configuration
 ```html
 <!doctype html>
