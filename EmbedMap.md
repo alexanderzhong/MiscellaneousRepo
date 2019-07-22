@@ -93,3 +93,12 @@ Example implementation with incorrect server configuration
 ![Incorrect EmbedMap Implementation](EmbedMapFail.PNG)
 <br>
 Note: The reason why www.google.com is not loading is because Google has its X-Frame-Options (predecessor to Content-Security-Policy) set to SAMEORIGIN, which prevents the browser from displaying iFrames that are not hosted on the same domain as the parent page.
+
+<br>
+
+*Deployment in third party software examples*
+<br>
+ServiceNow Ticket without EmbedMap
+![ServiceNow No Map](ServiceNowNoEmbedMap.PNG)
+ServiceNow Ticket with EmbedMap
+![ServiceNow Map](ServiceNowEmbedMap.PNG)
