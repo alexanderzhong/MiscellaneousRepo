@@ -101,5 +101,6 @@ Note: The reason why www.google.com is not loading is because Google has its X-F
 *ServiceNow Ticket without EmbedMap*
 ![ServiceNow No Map](ServiceNowNoEmbedMap.PNG)
 <br>
+<br>
 *ServiceNow Ticket with EmbedMap*
 ![ServiceNow Map](ServiceNowEmbedMap.PNG)
