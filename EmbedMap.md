@@ -96,9 +96,10 @@ Note: The reason why www.google.com is not loading is because Google has its X-F
 
 <br>
 
-*Deployment in third party software examples*
+**Deployment in third party software examples**
 <br>
-ServiceNow Ticket without EmbedMap
+*ServiceNow Ticket without EmbedMap*
 ![ServiceNow No Map](ServiceNowNoEmbedMap.PNG)
-ServiceNow Ticket with EmbedMap
+<br>
+*ServiceNow Ticket with EmbedMap*
 ![ServiceNow Map](ServiceNowEmbedMap.PNG)
