@@ -16,7 +16,7 @@ iFrames are HTML tags that embeds another HTML page into the current one. Browse
 <br>
 <br>
 
-### Appendix
+## Appendix
 [ServiceNow Implementation](#embedmap-in-servicenow) <br>
 [Splunk Implementation](#embedmap-in-splunk) <br>
 [PRTG Implementation](#embedmap-in-prtg) <br>
