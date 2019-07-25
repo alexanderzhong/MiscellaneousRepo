@@ -10,6 +10,15 @@ NetBrain EmbedMap is a limited view of a regular NetBrain Map that we are using 
 <br>
 **iFrame information:**
 iFrames are HTML tags that embeds another HTML page into the current one. Browsers keep the context of the iframe and its parent document totally separate by default. Neither the parent document nor the iframe document has access to each other's DOM, CSS styles, or JavaScript functions if they're not from the same domain. Each embedded browsing context has its own session history and document. Neither the iframe nor its parent can access the other's cookies or local storage. Given that iFrames are html tags, we can only implement iFrames in third-party software if they allow us to add html to their domain/website. Also, since we must generate an EmbedMap URL dynamically and use RESTful API calls to retrieve NetBrain information, the third party software must also allow these functionalities.
+<br>
+<br>
+
+**Appendix**
+[ServiceNow Implementation](#embedmap-in-servicenow)
+[Splunk Implementation](#embedmap-in-splunk)
+[PRTG Implementation](#embedmap-in-prtg)
+<br>
+<br>
 
 **[Step 1: Use case preparation](Step-1:-Use-case-preparation)**
 >> 1a. Enable https on Netbrain client server<br>
@@ -111,3 +120,12 @@ Note: The reason why www.google.com is not loading is because Google has its X-F
 <br>
 *ServiceNow Ticket with EmbedMap*
 ![ServiceNow Map](1111.png)
+
+## EmbedMap in ServiceNow
+
+
+## EmbedMap in Splunk
+
+
+##EmbedMap in PRTG
+Currently, there is no feasible solution to use EmbedMap in PRTG as there is no way to directly alter the content displayed by PRTG servers without interacting with their backend.
