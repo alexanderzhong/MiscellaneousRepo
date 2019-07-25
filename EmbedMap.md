@@ -5,18 +5,21 @@ NetBrain EmbedMap is a limited view of a regular NetBrain Map that we are using 
 <br>
 **Embed Map**
 ![Embed Map](ServiceNowEmbedMap.PNG)
-*Note*: Only data view and the actual map are shown
+**Full Map**
+![Full Map](FullMap.PNG)
+*Note*: Only data view and the actual map are shown in the EmbedMap and other functions such as Runbooks are absent
 <br>
 <br>
+
 **iFrame information:**
 iFrames are HTML tags that embeds another HTML page into the current one. Browsers keep the context of the iframe and its parent document totally separate by default. Neither the parent document nor the iframe document has access to each other's DOM, CSS styles, or JavaScript functions if they're not from the same domain. Each embedded browsing context has its own session history and document. Neither the iframe nor its parent can access the other's cookies or local storage. Given that iFrames are html tags, we can only implement iFrames in third-party software if they allow us to add html to their domain/website. Also, since we must generate an EmbedMap URL dynamically and use RESTful API calls to retrieve NetBrain information, the third party software must also allow these functionalities.
 <br>
 <br>
 
-**Appendix**
-[ServiceNow Implementation](#embedmap-in-servicenow)
-[Splunk Implementation](#embedmap-in-splunk)
-[PRTG Implementation](#embedmap-in-prtg)
+### Appendix
+[ServiceNow Implementation](#embedmap-in-servicenow) <br>
+[Splunk Implementation](#embedmap-in-splunk) <br>
+[PRTG Implementation](#embedmap-in-prtg) <br>
 <br>
 <br>
 
@@ -122,10 +125,12 @@ Note: The reason why www.google.com is not loading is because Google has its X-F
 ![ServiceNow Map](1111.png)
 
 ## EmbedMap in ServiceNow
-
-
+We have been able to successfully display EmbedMap in our ServiceNow application. 
+<br>
+<br>
 ## EmbedMap in Splunk
 
-
-##EmbedMap in PRTG
+<br>
+<br>
+## EmbedMap in PRTG
 Currently, there is no feasible solution to use EmbedMap in PRTG as there is no way to directly alter the content displayed by PRTG servers without interacting with their backend.
