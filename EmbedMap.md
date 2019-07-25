@@ -5,6 +5,7 @@ NetBrain EmbedMap is a limited view of a regular NetBrain Map that we are using 
 <br>
 **Embed Map**
 ![Embed Map](ServiceNowEmbedMap.PNG)
+<br>
 **Full Map**
 ![Full Map](FullMap.PNG)
 *Note*: Only data view and the actual map are shown in the EmbedMap and other functions such as Runbooks are absent
