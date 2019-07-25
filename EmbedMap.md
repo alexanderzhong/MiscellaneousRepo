@@ -126,11 +126,11 @@ Note: The reason why www.google.com is not loading is because Google has its X-F
 ![ServiceNow Map](1111.png)
 
 ## EmbedMap in ServiceNow
-We have been able to successfully display EmbedMap in our ServiceNow application. EmbedMap is embedded by adding HTML elements to the form (either by adding HTML directly or adding a UI Macro containing the iframe). This allows for end users to submit an EmbedMap at the time of incident.
+We have been able to successfully display EmbedMap in our ServiceNow application. EmbedMap is embedded by adding HTML elements to the incident form (either by adding HTML directly or adding a UI Macro containing the iframe). This allows for end users to submit an EmbedMap at the time of incident.
 <br>
 <br>
 ## EmbedMap in Splunk
-EmbedMap can be implemented in Splunk by adding a Dashboard to an application. The iframe can be added to the source file of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html).
+EmbedMap can be possibly implemented into Splunk by adding a Dashboard to an application. The iframe can be added to the source file of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html). It is unsure whether or not we can dynamically generate an embedMap URL using API calls. 
 <br>
 <br>
 ## EmbedMap in PRTG
