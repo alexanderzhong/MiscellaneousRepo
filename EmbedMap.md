@@ -126,11 +126,11 @@ Note: The reason why www.google.com is not loading is because Google has its X-F
 ![ServiceNow Map](1111.png)
 
 ## EmbedMap in ServiceNow
-We have been able to successfully display EmbedMap in our ServiceNow application. EmbedMap is embedded by adding HTML elements to the incident form (either by adding HTML directly or adding a UI Macro containing the iframe). This allows for end users to submit an EmbedMap at the time of incident.
+EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow application. We can use a ServiceNow developer instance to create a new application that can be published on the ServiceNow store so that customers are able to access it. EmbedMap is implemented by creating ServiceNow "Application Files" that can display HTML content. These files are stored inside our ServiceNow application.  There are multiple ways to do this, but one way is to add a "UI Macro" file containing html (this is where the iframe is inserted) and a "UI Formatter" to display the UI Macro on the application form. The iframe works the same as inside any other webpage, and the url of the iframe can be updated through javascript. In this way, EmbedMap can be displayed on the "incident form" that the application generates, allowing end users to see a NetBrain map. This allows for end users to submit an EmbedMap at the time of incident.
 <br>
 <br>
 ## EmbedMap in Splunk
-EmbedMap can be possibly implemented into Splunk by adding a Dashboard to an application. The iframe can be added to the source file of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html). It is unsure whether or not we can dynamically generate an embedMap URL using API calls. 
+A possible EmbedMap implementation in Splunk is through creating a splunk application (Note: This can be done by going into settings and pressing "Create app"). There will be a heading labeled "Dashboard" and after clicking this option, there is an option to create a Dashboard. The iframe can be added to the "source" of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html). It is unsure whether or not we can dynamically generate an embedMap URL using API calls. 
 <br>
 <br>
 ## EmbedMap in PRTG
