@@ -71,7 +71,7 @@ In order to generate the URL that displays the embedMap, we must retrieve the da
 <br>
 <br>
 
-Example implementation with correct server configuration
+Example where the "iFramed" page is allowed to be shown because wikipedia allows their other pages to iFrame their content
 ```html
 <!doctype html>
 
@@ -93,7 +93,7 @@ Example implementation with correct server configuration
 ![Correct EmbedMap Implementation](EMDemo.PNG)
 <br>
 <br>
-Example implementation with incorrect server configuration
+Example where the "iFrame-ed" page is not allowed to be shown because google servers prevent other pages from iFraming their content
 ```html
 <!doctype html>
 
