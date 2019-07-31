@@ -93,7 +93,7 @@ Example where the "iFramed" page is allowed to be shown because wikipedia allows
 ![Correct EmbedMap Implementation](EMDemo.PNG)
 <br>
 <br>
-Example where the "iFrame-ed" page is not allowed to be shown because google servers prevent other pages from iFraming their content
+Example where the "iFramed" page is not allowed to be shown because google servers prevent other pages from iFraming their content
 ```html
 <!doctype html>
 
