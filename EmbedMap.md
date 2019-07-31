@@ -37,8 +37,10 @@ iFrames are HTML tags that embeds another HTML page into the current one. Browse
 > https with a proper security certificate must be enabled on the Netbrain server in order for the embedMap to display properly. This is because http content will not display on an external site with https due to many browsers' Mixed-Content policies.
 
 ***1b. Add desired external domain to Content Security Policy tag in web.config file of client server***
-> The Content Security Policy tag is a security policy that only allows certain domains to display information from the server in iFrames. Domains not included in this tag will not be able to display the embedMap. (Use frame-ancestors keyword)
->Note: Content Secuirty Policy might not be supported by some of the older versions of browsers, which may cause an error.
+> The Content Security Policy tag is a security policy tag contained in the web.config file of our NetBrain web servers. Only the domains included within this tag are allowed to display EmbedMap inside of an iFrame. Domains not included in this tag will not be able to display the embedMap. (Use frame-ancestors keyword)
+> In this example, the domain "https://dev85857.service-now.com/" is included within the tag. This will allow that particular domain to display a NetBrain EmbedMap inside of an iFrame on their website. However, another domain, such as a PRTG or Splunk domain, will not be able to display NetBrain content in an iFrame since their domains are not included in the tags. 
+> Note: Content Secuirty Policy might not be supported by some of the older versions of browsers, which may be the cause of an error.
+> Note: This security policy is set on NETBRAIN SERVERS. This does not have anything to do with the integration targets. 
 
 ```html
 <!-- Add domain to Content-Security-Policy -->
