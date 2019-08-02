@@ -139,7 +139,7 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
 5. Replace the XML script with the following, and replace the variables domainURL, mapID, tenant, domain, and mapType with the correct values. 
 <br>
 
-```html
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<g2:evaluate jelly="true" var="jvar_url">
@@ -163,7 +163,7 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
 		}
 	</script>
 <tr> 
-    <td colspan="2">
+    	<td colspan="2">
 		<iframe id= "map" src= "$[jvar_url]" height="600px" width="1125px"></iframe>
 	</td> 
 </tr> 
