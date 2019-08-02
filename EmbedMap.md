@@ -139,7 +139,7 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
 5. Replace the XML script with the following, and replace the variables domainURL, mapID, tenant, domain, and mapType with the correct values. 
 <br>
 
-```xml
+```
 <?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<g2:evaluate jelly="true" var="jvar_url">
@@ -171,6 +171,7 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
 ```
 <br>
 <br>
+
 ## EmbedMap in Splunk
 <br>
 A possible EmbedMap implementation in Splunk is through creating a splunk application (Note: This can be done by going into settings and pressing "Create app"). There will be a heading labeled "Dashboard" and after clicking this option, there is an option to create a Dashboard. The iframe can be added to the "source" of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html). It is unsure whether or not we can dynamically generate an embedMap URL using API calls. 
@@ -179,6 +180,7 @@ A possible EmbedMap implementation in Splunk is through creating a splunk applic
 ![Splunk HTML](SplunkHTML.PNG)
 <br>
 <br>
+
 ## EmbedMap in PRTG
 <br>
 Currently, there is no feasible solution to use EmbedMap in PRTG as there is no way to directly alter the content displayed by PRTG servers without interacting with their backend.
