@@ -131,6 +131,45 @@ Note: The reason why www.google.com is not loading is because Google has its X-F
 EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow application. We can use a ServiceNow developer instance to create a new application that can be published on the ServiceNow store so that customers are able to access it. EmbedMap is implemented by creating ServiceNow "Application Files" that can display HTML content. These files are stored inside our ServiceNow application.  There are multiple ways to do this, but one way is to add a "UI Macro" file containing html (this is where the iframe is inserted) and a "UI Formatter" to display the UI Macro on the application form. The iframe works the same as inside any other webpage, and the url of the iframe can be updated through javascript. In this way, EmbedMap can be displayed on the "incident form" that the application generates, allowing end users to see a NetBrain map. This allows for end users to submit an EmbedMap at the time of incident.
 <br>
 <br>
+**Implementation Instructions**
+1. In the search bar titled "Filter Navigator", search "UI Macros". 
+2. Click on "UI Macros" under the header "System UI".
+3. Press the "New" button in the top bar. 
+4. In the text field labeled "Application", make sure that it is the correct application in which you want to implement EmbedMap. In most cases, this should be "Global". If it is not, go to "Settings" and change the Application.
+5. Replace the XML script with the following, and replace the variables domainURL, mapID, tenant, domain, and mapType with the correct values. 
+<br>
+```html
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g2:evaluate jelly="true" var="jvar_url">
+		var mapID = current.getValue('mapurl');
+		mapID;
+	</g2:evaluate>
+	<script language="javascript">
+    var domainURL = 'https://192.168.29.10/embedMap.html';
+    var mapID = '2ed114a0-3ccd-e0ba-0490-a7f884ec7454';
+    var tenant = 'a39cf019-9663-1437-5d12-746cb85e5ea0';
+    var domain = 'dd15375c-692b-4d21-85e2-c4621a62be53';
+    var mapType = 1;
+    var mapURL = domainURL + '?id=' + mapID + '&amp;t=' + tenant + "&amp;d=' + domain + '&amp;maptype=' + mapType.toString();
+		function setURL() {
+			mapID = g_form.getValue('mapurl');
+			document.getElementById("map").src = mapID;
+		}
+		
+		function reload(){
+			document.getElementById("map").src = document.getElementById("map").src;
+		}
+	</script>
+<tr> 
+    <td colspan="2">
+		<iframe id= "map" src= "$[jvar_url]" height="600px" width="1125px"></iframe>
+<!-- 		<iframe src="https://192.168.29.10/embedMap.html?id=2ed114a0-3ccd-e0ba-0490-a7f884ec7454&amp;t=a39cf019-9663-1437-5d12-746cb85e5ea0&amp;d=dd15375c-692b-4d21-85e2-c4621a62be53&amp;maptype=1" height="600px" width="1125px"></iframe> -->
+	</td> 
+</tr> 
+</j:jelly>
+```
+
 ## EmbedMap in Splunk
 A possible EmbedMap implementation in Splunk is through creating a splunk application (Note: This can be done by going into settings and pressing "Create app"). There will be a heading labeled "Dashboard" and after clicking this option, there is an option to create a Dashboard. The iframe can be added to the "source" of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html). It is unsure whether or not we can dynamically generate an embedMap URL using API calls. 
 <br>
