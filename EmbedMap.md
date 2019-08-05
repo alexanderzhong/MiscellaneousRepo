@@ -170,7 +170,9 @@ A possible EmbedMap implementation in Splunk is through creating a splunk applic
 3. Select the "Dashboards" tab at the top and click on the "Create New Dashboard" button. Fill out the information in the form. 
 4. Click on the "..." button in the top right and select the option to "Convert to HTML". Fill out the fields in the form that pops up. NOTE: Make sure to select "Create New" if this is not a new dashboard in case you want to keep a copy that is not in HTML. 
 5. Click on Edit once the dashboard has been converted to html. Locate where it says "BEGIN LAYOUT" and add HTML script to this section to customize your dashboard. It is here where you can add your iFrame with the EmbedMap URL. An example is shown below with part of the code. 
+
 <br>
+
 ```html
 <!--
 BEGIN LAYOUT
@@ -202,7 +204,9 @@ styles in <div> tags, similar to Bootstrap's grid system.
 END LAYOUT
 -->
 ```
+
 <br>
+
 ![Splunk Embed Map](SplunkEmbedMap.PNG)
 <br>
 ![Splunk HTML](SplunkHTML.PNG)
