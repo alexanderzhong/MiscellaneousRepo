@@ -164,6 +164,7 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
 ## EmbedMap in Splunk
 A possible EmbedMap implementation in Splunk is through creating a splunk application (Note: This can be done by going into settings and pressing "Create app"). There will be a heading labeled "Dashboard" and after clicking this option, there is an option to create a Dashboard. The iframe can be added to the "source" of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html). It is unsure whether or not we can dynamically generate an embedMap URL using API calls. 
 <br>
+<br>
 **Implementation Instructions**
 1. Click the gear icon at the top of the left bar. In the following screen, select "Create app" option in the top right corner.
 2. Fill out the proper information. Make sure to select the "barebones" template. 
