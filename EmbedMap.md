@@ -143,25 +143,14 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
 <?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<g2:evaluate jelly="true" var="jvar_url">
-		var mapID = current.getValue('mapurl');
-		mapID;
-	</g2:evaluate>
-	<script language="javascript">
-    		var domainURL = 'https://192.168.29.10/embedMap.html';
+	    	var domainURL = 'https://192.168.29.10/embedMap.html';
     		var mapID = '2ed114a0-3ccd-e0ba-0490-a7f884ec7454';
     		var tenant = 'a39cf019-9663-1437-5d12-746cb85e5ea0';
     		var domain = 'dd15375c-692b-4d21-85e2-c4621a62be53';
     		var mapType = 1;
     		var mapURL = domainURL + '?id=' + mapID + '&amp;t=' + tenant + "&amp;d=' + domain + '&amp;maptype=' + mapType.toString();
-		function setURL() {
-			mapID = g_form.getValue('mapurl');
-			document.getElementById("map").src = mapID;
-		}
-		
-		function reload(){
-			document.getElementById("map").src = document.getElementById("map").src;
-		}
-	</script>
+		mapURL;
+	</g2:evaluate>
 <tr> 
     	<td colspan="2">
 		<iframe id= "map" src= "$[jvar_url]" height="600px" width="1125px"></iframe>
