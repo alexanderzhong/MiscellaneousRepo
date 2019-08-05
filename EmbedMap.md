@@ -148,7 +148,7 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
     		var tenant = 'a39cf019-9663-1437-5d12-746cb85e5ea0';
     		var domain = 'dd15375c-692b-4d21-85e2-c4621a62be53';
     		var mapType = 1;
-    		var mapURL = domainURL + '?id=' + mapID + '&amp;t=' + tenant + "&amp;d=' + domain + '&amp;maptype=' + mapType.toString();
+    		var mapURL = domainURL + '?id=' + mapID + '&amp;t=' + tenant + '&amp;d=' + domain + '&amp;maptype=' + mapType.toString();
 		mapURL;
 	</g2:evaluate>
 <tr> 
