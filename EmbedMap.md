@@ -164,6 +164,45 @@ EmbedMap can be deployed in ServiceNow through the creation of a ServiceNow appl
 ## EmbedMap in Splunk
 A possible EmbedMap implementation in Splunk is through creating a splunk application (Note: This can be done by going into settings and pressing "Create app"). There will be a heading labeled "Dashboard" and after clicking this option, there is an option to create a Dashboard. The iframe can be added to the "source" of the dashboard or inserted directly into the html-converted dashboard (There is an option to convert the dashboard into html). It is unsure whether or not we can dynamically generate an embedMap URL using API calls. 
 <br>
+**Implementation Instructions**
+1. Click the gear icon at the top of the left bar. In the following screen, select "Create app" option in the top right corner.
+2. Fill out the proper information. Make sure to select the "barebones" template. 
+3. Select the "Dashboards" tab at the top and click on the "Create New Dashboard" button. Fill out the information in the form. 
+4. Click on the "..." button in the top right and select the option to "Convert to HTML". Fill out the fields in the form that pops up. NOTE: Make sure to select "Create New" if this is not a new dashboard in case you want to keep a copy that is not in HTML. 
+5. Click on Edit once the dashboard has been converted to html. Locate where it says "BEGIN LAYOUT" and add HTML script to this section to customize your dashboard. It is here where you can add your iFrame with the EmbedMap URL. An example is shown below with part of the code. 
+<br>
+```html
+<!--
+BEGIN LAYOUT
+This section contains the layout for the dashboard. Splunk uses proprietary
+styles in <div> tags, similar to Bootstrap's grid system.
+-->
+<header>
+    <a aria-label="Screen reader users, click here to skip the navigation bar" class="navSkip" href="#navSkip" tabIndex="1">Skip Navigation &gt;</a>
+    <div class="header splunk-header">
+            <div id="placeholder-splunk-bar">
+                <a href="{{SPLUNKWEB_URL_PREFIX}}/app/launcher/home" class="brand" title="splunk &gt; listen to your data">splunk<strong>&gt;</strong></a>
+            </div>
+                <div id="placeholder-app-bar"></div>
+    </div>
+    <a id="navSkip"></a>
+</header>
+<div class="dashboard-body container-fluid main-section-body" data-role="main">
+    <div class="dashboard-header clearfix">
+        <h2>iframe</h2>
+      <p style="text-align:center;">This is an iFrame</p>
+      <iframe id= "map" src= "https://192.168.29.10/embedMap.html?id=2ed114a0-3ccd-e0ba-0490-a7f884ec7454&amp;t=a39cf019-9663-1437-5d12-746cb85e5ea0&amp;d=dd15375c-692b-4d21-85e2-c4621a62be53&amp;maptype=1" height="600px" width="1125px" style="border:0"></iframe>
+    	<!--https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed-->
+  	</div>
+
+
+</div>
+
+<!--
+END LAYOUT
+-->
+```
+<br>
 ![Splunk Embed Map](SplunkEmbedMap.PNG)
 <br>
 ![Splunk HTML](SplunkHTML.PNG)
