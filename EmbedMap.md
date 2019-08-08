@@ -36,7 +36,7 @@ iFrames are HTML tags that embeds another HTML page into the current one. Browse
 ***1a. Enable https on Netbrain client server***
 > https with a proper security certificate must be enabled on the Netbrain server in order for the embedMap to display properly. This is because http content will not display on an external site with https due to many browsers' Mixed-Content policies. 
 <br>
-Resources on enabled https: [Enable HTTPS on NetBrain Server](https://ftp.netbraintech.com/netbrain-support/ProblemDetail.php?problemid=591)
+Resources on enabled https: https://ftp.netbraintech.com/netbrain-support/ProblemDetail.php?problemid=591
 
 
 ***1b. Add desired external domain to Content Security Policy tag in web.config file of client server***
@@ -69,6 +69,7 @@ For example, if we wanted to display an embedmap on Google, we would append Goog
 ***2a. Generate URL using Netbrain RESTful API***
 >The embedMap URL is in the format "https:// IP address /embedMap.html" with 5 query parameters: id (mapId), t (tenant), d (domain), maptype (int), newEmptyMap (boolean). newEmptyMap is not a necessary query parameter. 
 Ex. https://192.168.29.10/embedMap.html?id=2ed114a0-3ccd-e0ba-0490-a7f884ec7454&t=a39cf019-9663-1437-5d12-746cb85e5ea0&d=dd15375c-692b-4d21-85e2-c4621a62be53&maptype=1  
+
 *Note*: In ServiceNow and in other implementations, the "&" character may be a special character and must be changed to "&amp;".
 <br>
 In order to generate the URL that displays the embedMap, we must retrieve the data for the query parameters through RESTful API.
