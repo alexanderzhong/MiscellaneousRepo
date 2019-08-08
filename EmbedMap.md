@@ -35,9 +35,9 @@ iFrames are HTML tags that embeds another HTML page into the current one. Browse
 ## Step 1: Use case preparation
 ***1a. Enable https on Netbrain client server***
 > https with a proper security certificate must be enabled on the Netbrain server in order for the embedMap to display properly. This is because http content will not display on an external site with https due to many browsers' Mixed-Content policies. 
-<br>
-Resources on enabled https: https://ftp.netbraintech.com/netbrain-support/ProblemDetail.php?problemid=591
 
+Resources on enabled https: https://ftp.netbraintech.com/netbrain-support/ProblemDetail.php?problemid=591
+<br>
 
 ***1b. Add desired external domain to Content Security Policy tag in web.config file of client server***
 > The Content Security Policy tag is a security policy tag contained in the web.config file of our NetBrain web servers. Only the domains included within this tag are allowed to display EmbedMap inside of an iFrame. Domains not included in this tag will not be able to display the embedMap. (Use frame-ancestors keyword)
