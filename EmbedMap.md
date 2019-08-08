@@ -40,7 +40,7 @@ iFrames are HTML tags that embeds another HTML page into the current one. Browse
 > The Content Security Policy tag is a security policy tag contained in the web.config file of our NetBrain web servers. Only the domains included within this tag are allowed to display EmbedMap inside of an iFrame. Domains not included in this tag will not be able to display the embedMap. (Use frame-ancestors keyword)
 > In this example, the domain "https://dev85857.service-now.com/" is included within the tag. This will allow that particular domain to display a NetBrain EmbedMap inside of an iFrame on their website. However, another domain, such as a PRTG or Splunk domain, will not be able to display NetBrain content in an iFrame since their domains are not included in the tags. 
 > Note: Content Secuirty Policy might not be supported by some of the older versions of browsers, which may be the cause of an error.
-> Note: This security policy is set on NETBRAIN SERVERS. This does not have anything to do with the integration targets. 
+> Note: This security policy is set on NETBRAIN SERVERS. This does not have anything to do with the external domain. 
 
 ```html
 <!-- Add domain to Content-Security-Policy -->
@@ -55,11 +55,18 @@ iFrames are HTML tags that embeds another HTML page into the current one. Browse
 <add name="Strict-Transport-Security" value="max-age=31536000; includeSubDomains; preload" />
 <add name="Content-Security-Policy" value="frame-ancestors https://192.168.29.10:8080 https://dev85857.service-now.com/"/>
 ```
+Note that the only line that needs to be altered is the last line with the tag "Content-Security-Policy". All other lines are related, but should be left alone.
+<br>
+For example, if we wanted to display an embedmap on Google, we would append Google's domain in the following way.
+```html
+<add name="Content-Security-Policy" value="frame-ancestors https://192.168.29.10:8080 https://dev85857.service-now.com/ https://www.google.com"/>
+```
 
 ## Step 2: Embedding Map
 ***2a. Generate URL using Netbrain RESTful API***
->The embedMap URL is in the format "https:// IP address/Domain /embedMap.html" with 5 query parameters: id (mapId), t (tenant), d (domain), maptype (int), newEmptyMap (boolean). 
-Ex. https://192.168.29.10/embedMap.html?id=2ed114a0-3ccd-e0ba-0490-a7f884ec7454&amp;t=a39cf019-9663-1437-5d12-746cb85e5ea0&amp;d=dd15375c-692b-4d21-85e2-c4621a62be53&amp;maptype=1  
+>The embedMap URL is in the format "https:// IP address /embedMap.html" with 5 query parameters: id (mapId), t (tenant), d (domain), maptype (int), newEmptyMap (boolean). newEmptyMap is not a necessary query parameter. 
+Ex. https://192.168.29.10/embedMap.html?id=2ed114a0-3ccd-e0ba-0490-a7f884ec7454&t=a39cf019-9663-1437-5d12-746cb85e5ea0&d=dd15375c-692b-4d21-85e2-c4621a62be53&maptype=1  
+Note: In ServiceNow and in other implementations, the "&" character may be a special character and must be changed to "&amp;".
 In order to generate the URL that displays the embedMap, we must retrieve the data for the query parameters through RESTful API.
 
 ***2b. Input generated URL into src attribute of iFrame tag***
